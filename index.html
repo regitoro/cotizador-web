@@ -35,42 +35,141 @@
 
         <br><br>
         <label for="dominio">Dominio:
-            <input class="from-check-input" type="checkbox" id="dominio" name="hosting">
+            <input class="from-check-input" type="checkbox" id="dominio" name="hosting" data-precio="1500">
         </label>
         
         <br><br>
         <label for="hosting">Hosting:
-            <input class="from-check-input" type="checkbox" id="dominio" name="hosting">
+            <input class="from-check-input" type="checkbox" id="hosting" name="hosting" data-precio="600">
         </label>
 
         <br><br>
         <label for="pagina-web">Pagina web: 
-            <input class="from-check-input" type="checkbox" id="pagina-web" name="pagina-web">
+            <input class="from-check-input" type="checkbox" id="pagina-web" name="pagina-web" data-precio="5000">
         </label>
 
         <br><br>
         <label for="pagina-ad">Pagina adicional: 
-            <input class="from-check-input" type="checkbox" id="pagina-ad" name="pagina-ad">
+            <input class="from-check-input" type="checkbox" id="pagina-ad" name="pagina-ad" data-precio="2000">
         </label>
 
         <br><br>
         <label for="SEO">SEO: 
-            <input class="from-check-input" type="checkbox" id="SEO" name="SEO">
+            <input class="from-check-input" type="checkbox" id="SEO" name="SEO" data-precio="2000">
         </label>
 
         <br><br>
-        <label for="BD/CMS">BD / CMS: 
-            <input class="from-check-input" type="checkbox" id="BD/CMS" name="BD/CMS">
+        <label for="bd/cms">BD / CMS: 
+            <input class="from-check-input" type="checkbox" id="bdcms" name="bdcms" data-precio="7000">
         </label>
 
         <br><br>
         <label for="cambios">Cambios por DEV: 
-            <input class="from-check-input" type="checkbox" id="cambios" name="cambios">
+            <input class="from-check-input" type="checkbox" id="cambios" name="cambios" data-precio="500">
         </label>
+        <div class="total">Total: <span id="total">0</span></div>
     </div>
     <div class="footer">
-        2026 derechos reservados
+        <div class= " year">2026 derechos reservados</div> 
+        uvaq
     </div>
+    <script>
+        const dominio=document.querySelector("#dominio"); 
+        const hosting=document.querySelector("#hosting");
+        const paginaWeb=document.querySelector("#pagina-web");
+        const paginaAd=document.querySelector("#pagina-ad");
+        const seo=document.querySelector("#SEO")
+        const bdcms=document.querySelector("#bdcms")
+        const cambios=document.querySelector("#cambios");
+        
+        var total = 0;
+
+        //const pages=document.querySelector("#.check-pages");
+
+        //evento click
+        hosting.addEventListener("click" , function(){
+            if (hosting.checked) {
+                total += parseInt(hosting.dataset.precio)
+            console.log(" Hosting seleccionado, Total: " + total)
+            }else{
+            console.log("hosting no seleccionado")
+            }
+            document.getElementById("total").textContent = total;
+
+        });
+
+        dominio.addEventListener("click" , function(){
+            if (dominio.checked) {
+                total += parseInt(dominio.dataset.precio)
+            console.log(" Dominio seleccionado, Total: " + total)
+            }else{
+            console.log("dominip no seleccionado")
+            }
+            document.getElementById("total").textContent = total;
+
+        });
+
+        paginaWeb.addEventListener("click" , function(){
+            if (paginaWeb.checked){
+                total += parseInt(paginaWeb.dataset.precio)
+                console.log("Pagina web seleccionado, Total: " + total)
+            }else{
+                console.log("Pagina web no seleccionado")
+            }
+                document.getElementById("total").textContent = total;
+        });
+
+        paginaAd.addEventListener("click" , function(){
+            if (paginaAd.checked){
+                total += parseInt(paginaAd.dataset.precio)
+                console.log("Pagina adicional seleccionado, Total: " + total)
+            }else{
+                console.log("Pagina adicional no seleccionado")
+            }
+                document.getElementById("total").textContent = total;
+        });
+
+        SEO.addEventListener("click" , function(){
+            if (SEO.checked){
+                total += parseInt(SEO.dataset.precio)
+                console.log("SEO adicional seleccionado, Total: " + total)
+            }else{
+                console.log("SEO adicional no seleccionado")
+            }
+                document.getElementById("total").textContent = total;
+        });
+
+        bdcms.addEventListener("click" , function(){
+            if (bdcms.checked){
+                total += parseInt(bdcms.dataset.precio)
+                console.log("BD/CMS adicional seleccionado, Total: " + total)
+            }else{
+                console.log("BD/CMS adicional no seleccionado")
+            }
+                document.getElementById("total").textContent = total;
+        });
+
+        cambios.addEventListener("click" , function(){
+            if (cambios.checked){
+                total += parseInt(cambios.dataset.precio)
+                console.log("Cambios seleccionado, Total: " + total)
+            }else{
+                console.log("Cmabios no seleccionado")
+            }
+                document.getElementById("total").textContent = total;
+        });
+
+
+
+        //pruebas
+        console.log(dominio.dataset.precio + ", " +hosting.dataset.precio);
+
+        //suma numeros
+        console.log(Number(dominio.dataset.precio)+Number(hosting.dataset.precio))
+
+        
+       
+    </script>
 
 </body>
 </html>
