@@ -1,9 +1,14 @@
 h1{
-    color: aquamarine;
+    
     font-size: 40px;
 }
+h4{
+    color: blue;
+}
 
-h1{
-    font-size: 70px;
+.titulo{
+    display: flex;
+    
+    justify-content: center;
 }
 
