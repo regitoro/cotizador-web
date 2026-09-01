@@ -1,14 +1,41 @@
 h1{
-    
     font-size: 40px;
+    margin: 1px
 }
 h4{
     color: blue;
+    margin: 0
 }
 
 .titulo{
     display: flex;
-    
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    background-color: #eef2f7; /*fondo gris */
+    padding: 30px;
+
+}
+
+.cotizacion{
+    flex: 2;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    padding: 30px;
+}
+
+.total{
+    flex: 1;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    /*border-radius: 12px;*/
+    padding: 25px;
 }
 
