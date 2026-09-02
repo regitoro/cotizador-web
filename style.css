@@ -15,12 +15,30 @@ h4{
     
 }
 
+.header{
+    display: flex;
+    flex-direction: row;
+
+}
+.logo{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+.menu-dav{
+
+}
+
 .container{
     display: flex;
     flex-direction: row;
     gap: 30px;
     background-color: #eef2f7; /*fondo gris */
     padding: 30px;
+    width: 1100px;
+    margin: auto;
 
 }
 
@@ -39,3 +57,39 @@ h4{
     padding: 25px;
 }
 
+.window{
+    z-index: 10;
+    position: absolute;
+    background-color: grey;
+    width: 300px;
+    height: 150px;
+    left: 0;
+    right: 0;
+    margin: 100px auto;
+    
+}
+
+.windowHeader{
+    display: flex;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  height: 30%;
+
+
+}
+
+.windowContent{
+    background-color: gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.not-show{
+    display: none;
+}
+
+.show{
+    display: block;
+}

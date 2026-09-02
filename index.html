@@ -6,9 +6,17 @@
     <title>Cotizador Web</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
+    <nav class="navbar">
+
+      <button class="show-window">Abrir</button>
+
     <div class="header">
+  
+
       <div class="logo">Logo</div>
+
       <div class="menu-dav">
         <ul>
           <li><a href="#">Inicio</a></li>
@@ -16,7 +24,9 @@
           <li><a href="#">Contactos</a></li>
         </ul>
       </div>
+      
     </div>
+  </nav>
 
     <div class="titulo">
       <h4>PROYECTO INTRODUCTORIO</h4>
@@ -24,6 +34,19 @@
       <h5>Completa el formulario para generar una cotizacion estimada</h5>
     </div>
     <div class="container">
+
+        <div class="window not-show">
+            <div class="windowHeader">
+                <p>Advertencia</p>
+                <div><button id="window-closed">X</button></div>
+            </div>
+
+            <div class="windowContent">
+                <p>Error</p>
+                <button>OK</button>
+                </div>
+        
+        </div>
       
       <div class="cotizacion">
         <label for="nombre">Nombre del cliente:</label>
@@ -123,10 +146,15 @@
       <div class="total">Total: <span id="total">0</span></div>
     </div>
 
+    
+
+
     <div class="footer">
       <div class="year">2026 derechos reservados</div>
       uvaq
     </div>
+
+
     <script>
       const dominio = document.querySelector("#dominio");
       const hosting = document.querySelector("#hosting");
@@ -136,7 +164,25 @@
       const bdcms = document.querySelector("#bdcms");
       const cambios = document.querySelector("#cambios");
 
+      var showWindow = document.querySelector(".show-window");
+      var closeWindow = document.querySelector("#window-closed");
+
       var total = 0;
+
+      var win = document.querySelector(".window");
+
+
+      showWindow.addEventListener("click", function(){
+        console.log("not-show")
+        win.classList.add("show");
+
+
+      })
+
+      closeWindow.addEventListener("click", function() {
+            win.classList.remove("show");
+            win.classList.add("not-show");
+        });
 
       //const pages=document.querySelector("#.check-pages");
 
@@ -146,70 +192,77 @@
           total += parseInt(hosting.dataset.precio);
           console.log(" Hosting seleccionado, Total: " + total);
         } else {
+          total-=parseInt(hosting.dataset.precio)
           console.log("hosting no seleccionado");
         }
         document.getElementById("total").textContent = total;
-      });
+      })
 
       dominio.addEventListener("click", function () {
         if (dominio.checked) {
           total += parseInt(dominio.dataset.precio);
           console.log(" Dominio seleccionado, Total: " + total);
         } else {
+          total-=parseInt(dominio.dataset.precio)
           console.log("dominip no seleccionado");
         }
         document.getElementById("total").textContent = total;
-      });
+      })
 
       paginaWeb.addEventListener("click", function () {
         if (paginaWeb.checked) {
           total += parseInt(paginaWeb.dataset.precio);
           console.log("Pagina web seleccionado, Total: " + total);
         } else {
+          total-=parseInt(paginaWeb.dataset.precio)
           console.log("Pagina web no seleccionado");
         }
         document.getElementById("total").textContent = total;
-      });
+      })
 
       paginaAd.addEventListener("click", function () {
         if (paginaAd.checked) {
           total += parseInt(paginaAd.dataset.precio);
           console.log("Pagina adicional seleccionado, Total: " + total);
         } else {
+          total-=parseInt(paginaAd.dataset.precio)
           console.log("Pagina adicional no seleccionado");
         }
         document.getElementById("total").textContent = total;
-      });
+      })
 
       SEO.addEventListener("click", function () {
         if (SEO.checked) {
           total += parseInt(SEO.dataset.precio);
           console.log("SEO adicional seleccionado, Total: " + total);
         } else {
+          total-=parseInt(SEO.dataset.precio)
           console.log("SEO adicional no seleccionado");
         }
         document.getElementById("total").textContent = total;
-      });
+      })
 
       bdcms.addEventListener("click", function () {
         if (bdcms.checked) {
           total += parseInt(bdcms.dataset.precio);
           console.log("BD/CMS adicional seleccionado, Total: " + total);
         } else {
+          total-=parseInt(bdcms.dataset.precio)
           console.log("BD/CMS adicional no seleccionado");
         }
         document.getElementById("total").textContent = total;
-      });
+      })
 
       cambios.addEventListener("click", function () {
         if (cambios.checked) {
           total += parseInt(cambios.dataset.precio);
           console.log("Cambios seleccionado, Total: " + total);
         } else {
+          total-=parseInt(cambios.dataset.precio)
           console.log("Cmabios no seleccionado");
         }
         document.getElementById("total").textContent = total;
-      });
+      })
 
       //pruebas
       console.log(dominio.dataset.precio + ", " + hosting.dataset.precio);
