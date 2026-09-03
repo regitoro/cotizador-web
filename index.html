@@ -12,10 +12,9 @@
 
       <button class="show-window">Abrir</button>
 
-    <div class="header">
-  
-
-      <div class="logo">Logo</div>
+      <div class="logo">
+        <h1>Cotizador Web</h1>
+      </div>
 
       <div class="menu-dav">
         <ul>
@@ -24,17 +23,20 @@
           <li><a href="#">Contactos</a></li>
         </ul>
       </div>
-      
-    </div>
+    
   </nav>
 
+  <!--titulo-->
     <div class="titulo">
       <h4>PROYECTO INTRODUCTORIO</h4>
       <h1>Formulario de cotizacion</h1>
       <h5>Completa el formulario para generar una cotizacion estimada</h5>
     </div>
+
+    <!---contendor-->
     <div class="container">
 
+      <!---warning window-->
         <div class="window not-show">
             <div class="windowHeader">
                 <p>Advertencia</p>
@@ -147,8 +149,6 @@
     </div>
 
     
-
-
     <div class="footer">
       <div class="year">2026 derechos reservados</div>
       uvaq
@@ -171,17 +171,15 @@
 
       var win = document.querySelector(".window");
 
-
+      
       showWindow.addEventListener("click", function(){
         console.log("not-show")
         win.classList.add("show");
-
-
       })
 
       closeWindow.addEventListener("click", function() {
-            win.classList.remove("show");
-            win.classList.add("not-show");
+          win.classList.remove("show");
+          win.classList.add("not-show");
         });
 
       //const pages=document.querySelector("#.check-pages");

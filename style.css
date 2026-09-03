@@ -7,29 +7,33 @@ h4{
     margin: 0
 }
 
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: cadetblue;
+}
+
+
+
+
+.menu-dav a{
+    color: white;
+
+}
+
 .titulo{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 20px;
+
     
 }
 
-.header{
-    display: flex;
-    flex-direction: row;
 
-}
-.logo{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-
-}
-
-.menu-dav{
-
-}
 
 .container{
     display: flex;
