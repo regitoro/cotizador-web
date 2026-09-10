@@ -9,7 +9,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 14px 30px;
-    background-color: cadetblue;
+    background-color: black;
     margin: 0px 0px 20px 0px;
 }
 
@@ -121,6 +121,7 @@ body {
 
 .cupon {
   margin-top: 20px;
+  margin-right: 25px;
 }
 
 .cupon input {
