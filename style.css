@@ -1,32 +1,37 @@
-h1{
-    font-size: 40px;
-    margin: 1px;
-    font-family: "Merriweather Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-    
+
+body {
+  margin: 0;
+  font-family: "Jost", sans-serif;
 }
-h4{
-    color: blue;
-    margin: 0;
-    font-family: "Merriweather Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-}
+
 
 .navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 30px;
+    padding: 14px 30px;
     background-color: cadetblue;
+    margin: 0px 0px 20px 0px;
+}
+
+.logo h1 {
+  color: white;
+  font-size: 22px;
+}
+
+.menu-dav ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 
 .menu-dav a{
     color: white;
+    text-decoration: none;
+    font-size: 14px;
 
 }
 
@@ -36,6 +41,7 @@ h4{
     max-width: 1100px;
     margin: auto;
     background: linear-gradient(to right, #F8FAFC ,#F2F7FF);
+    border-radius: 30px;
 }
 
 .titulo{
@@ -43,12 +49,22 @@ h4{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    font-family: "Merriweather Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-  
+    padding: 50px 20px 30px;
+    text-align: center;
+}
+
+.titulo h1 {
+  font-size: 40px;
+  margin: 4px 0;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.titulo p {
+  margin: 0;
+  color: #64748b;
+  font-size: 15px;
 }
 
 
@@ -56,9 +72,32 @@ h4{
     display: flex;
     flex-direction: row;
     gap: 30px;
-    /* background: linear-gradient(to right, #F8FAFC ,#F2F7FF); */
-    padding: 30px;
+    padding: 10px 30px 50px;
+    font-family: "Jost", sans-serif;
 
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s ease;
 }
 
 .cotizacion{
@@ -67,27 +106,33 @@ h4{
     border: 1px solid #e2e8f0;
     box-shadow: 0 4px 8px rgba(0,0,0,.5);
     padding: 30px;
+    border-radius: 12px;
 }
 
-.cotizacion label{ 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
+
+
+.servicio-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  color: #1e293b;
 }
 
-.cupon p{
-
-
+.cupon {
+  margin-top: 20px;
 }
 
-.cupon{
-    display: flex;
-    gap: 30px;
-    padding: 10px 10px
-
+.cupon input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
 }
 
 .calculate-button {
@@ -97,16 +142,27 @@ h4{
     gap: 15px;
 }
 
+.calculate-button button{
+    border-radius: 10px;
+}
+
+.btn-limpiar{
+    background-color: #2563eb;
+    color: white;
+    border: none;
+}
 
 
 .foto{
     flex: 1;
-    background-color: white;
+    background-image: url(https://i.pinimg.com/1200x/a5/7e/73/a57e739a92ac0500edbba6d970456f6d.jpg);
+    background-size: cover;      /* la imagen cubre todo el contenedor sin deformarse */
+    background-position: center;
     border: 1px solid #e2e8f0;
-    /*border-radius: 12px;*/
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,.5);
     padding: 25px;
 }
-
 
 
 .footer{
@@ -118,45 +174,119 @@ h4{
 .window{
     z-index: 10;
     position: absolute;
-    background-color: grey;
+    background-color: #F0F6FF;
     width: 300px;
-    height: 150px;
+    /* height: 150px; */
     left: 0;
     right: 0;
     margin: 100px auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
     
 }
 
-.window{
-    z-index: 10;
-    position: absolute;
-    background-color: grey;
-    width: 270px;
-    height: 350px;
-    left: 0;
-    right: 0;
-    margin: 100px auto;
-}
 
+/* header */
+.windowHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #F0F6FF;
+    color: black;
+    padding: 8px 5px 8px 15px;
+    
+
+}
 
 .windowHeader p {
     margin-left: 12px;
 }
 
-.windowHeader{
-    display: flex;
-    justify-content: space-between;
-    background-color: black;
-    color: white;
-    height: 30%;
+.windowHeader h2{
+    margin: 0;
+    font-size: 19x;
+    font-weight: 700;
+
 }
 
-.windowContent{
-    background-color: gray;
+.windowHeader .titulos{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
+
+.windowHeader .eyebrow {
+  margin: 0 0 4px;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.windowHeader button {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #888;
+  cursor: pointer;
+  line-height: 1;
+  
+}
+
+
+.windowContent{
+    display: flex;
+    flex-direction: column;
+    padding: 8px 20px 20px;
+    background-color: #F0F6FF;
+}
+
+
+.nota {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 4px 0 16px;
+  line-height: 1.4;
+}
+
+.detalle-fila {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  color: #374151;
+}
+
+.total-fila {
+  border-bottom: none;
+  border-top: 2px solid #e5e7eb;
+  margin-top: 8px;
+  padding-top: 14px;
+  font-size: 16px;
+}
+
+.total-fila span:last-child {
+  font-weight: 700;
+  color: #111827;
+}
+
+
+#window-ok {
+  margin-top: 16px;
+  align-self: stretch;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+
 
 .calculate-button{
     width: 100%;
@@ -171,11 +301,29 @@ h4{
 }
 
 
-
 .not-show{
     display: none;
 }
 
 .show{
     display: block;
+}
+
+.not-cupon{
+    display: none;
+}
+
+.show-cupon{
+    display: block;
+}
+
+.cupon-aplicado.not-cupon {
+  display: none;
+}
+
+.cupon-aplicado.show-cupon {
+  display: block;
+  color: #16a34a; /* verde, para que combine con el estilo del descuento */
+  font-weight: 600;
+  font-size: 13px;
 }

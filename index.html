@@ -10,6 +10,17 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Noto+Sans+KR:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- titulos cotizador -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Noto+Sans+KR:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- contenedor font -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Jost:ital,wght@0,100..900;1,100..900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Noto+Sans+KR:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -32,22 +43,29 @@
     <div class="page">
       <!--titulo-->
       <div class="titulo">
-        <h4>PROYECTO INTRODUCTORIO</h4>
         <h1>Formulario de cotizacion</h1>
-        <h5>Completa el formulario para generar una cotizacion estimada</h5>
+        <p>Completa el formulario para generar una cotizacion estimada</p>
       </div>
 
       <!---contendor-->
       <div class="container">
-        <!---warning window-->
+        
+        <!---content window-->
         <div class="window not-show">
           <div class="windowHeader">
-            <p>Advertencia</p>
+            
+            <div class = "titulos">
+              <p class="eyebrow">Resultado</p>
+              <h2>Cotización para <span id="result-nombre"></span></h2>
+            </div>
+            
             <div><button id="window-closed">X</button></div>
           </div>
 
           <div class="windowContent">
-            <p>Cotización para <span id="result-nombre"></span></p>
+            <div class = "subtitulo">
+              <p class = "cupon-aplicado not-cupon">Cupon septiembre aplicado</p>
+            </div>
             
             <div class="detalle-fila">
               <span>Páginas (<span id="result-num-paginas">0</span>):</span>
@@ -59,82 +77,70 @@
               <span id="total-servicios">$0</span>
             </div>
 
-            <div class="subtotal">Subtotal: <span id="subtotal">0</span></div>
+            <div class="detalle-fila">
+              <span>Subtotal:</span>
+              <span id="subtotal">$0</span>
+            </div>
 
-            <div class="descuento">Descuento: <span id="descuento">0</span></div>
+             <div class="detalle-fila">
+              <span>Descuento</span>
+              <span id="descuento">-$0</span>
+            </div>
 
-            <div class="iva">IVA (16%): <span id="iva">0</span></div>
+            <div class="detalle-fila">
+              <span>IVA (16%)</span> 
+              <span id="iva">$0</span>
+            </div>
 
-            <div class="total">Total: <span id="total">0</span></div>
+            <div class="detalle-fila total-fila">
+              <span>Total</span>
+              <span id="total">$0</span>
+            </div>
 
             <button id="window-ok">OK</button>
-
-
 
           </div>
         </div>
 
         <div class="cotizacion">
-          <label for="nombre">Nombre del cliente:</label>
-          <input type="text" id="nombre" name="nombre" />
+          <div class="form-group">
+            <label for="nombre">Nombre del cliente:</label>
+            <input type="text" id="nombre" name="nombre" />
+          </div>
 
-          <br /><br />
+          <div class="form-group">
+            <label for="numero">Numero de paginas ($2000 c/u): </label>
+            <p class = "promo">Promo: 3 paginas por $5000 incluidas</p>
+            <input type="number" id="numero" name="numero" />
+          </div>
 
-          <label for="numero">Numero de paginas ($2000 c/u): </label>
-          <p class = "promo">Promo: 3 paginas por $5000 incluidas</p>
-          <input type="number" id="numero" name="numero" />
+          <h3 class="servicios-titulo">Servicios adicionales</h3>
 
-          <br /><br />
-          <label for="dominio"
-            >Dominio:
+
+          <label for="dominio" class="servicio-row">
+            Dominio:
             <input
               class="form-check-input"
               type="checkbox"
               id="dominio"
               name="dominio"
-              data-precio="1500"
+              data-precio="600"
             />
           </label>
 
-          <br /><br />
-          <label for="hosting"
-            >Hosting:
+          <label for="hosting" class="servicio-row">
+            Hosting:
             <input
               class="form-check-input"
               type="checkbox"
               id="hosting"
               name="hosting"
-              data-precio="600"
+              data-precio="1900"
             />
           </label>
 
-          <!-- <br /><br />
-          <label for="pagina-web"
-            >Pagina web:
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="pagina-web"
-              name="pagina-web"
-              data-precio="5000"
-            />
-          </label> -->
-
-          <!-- <br /><br />
-          <label for="pagina-ad"
-            >Pagina adicional:
-            <input
-              class="from-check-input"
-              type="checkbox"
-              id="pagina-ad"
-              name="pagina-ad"
-              data-precio="2000"
-            />
-          </label> -->
-
-          <br /><br />
-          <label for="SEO"
-            >SEO:
+          <label for="SEO" class="servicio-row">
+            SEO:
             <input
               class="form-check-input"
               type="checkbox"
@@ -144,9 +150,8 @@
             />
           </label>
 
-          <br /><br />
-          <label for="bd/cms"
-            >BD / CMS:
+          <label for="bd/cms" class="servicio-row">
+            BD / CMS:
             <input
               class="form-check-input"
               type="checkbox"
@@ -156,9 +161,8 @@
             />
           </label>
 
-          <br /><br />
-          <label for="cambios"
-            >Cambios por DEV:
+          <label for="cambios" class="servicio-row">
+            Cambios por DEV:
             <input
               class="form-check-input"
               type="checkbox"
@@ -170,12 +174,12 @@
 
           <div class = "cupon">
             <p>Aplicar cupon:</p> 
-          <input type="text" id="cupon"/>
+            <input type="text" id="cupon"/>
           </div>
 
           <div class="calculate-button">
             <button class = "show-window">Calcular cotizacion</button>
-            <button>Limpiar</button>
+            <button class = "btn-limpiar">Limpiar</button>
           </div>
         </div>
 
@@ -195,8 +199,6 @@
       const checkboxes = [
         document.querySelector("#dominio"),
         document.querySelector("#hosting"),
-        // document.querySelector("#pagina-web"),
-        //document.querySelector("#pagina-ad"),
         document.querySelector("#SEO"),
         document.querySelector("#bdcms"),
         document.querySelector("#cambios"),
@@ -227,11 +229,15 @@
 
       var showWindow = document.querySelector(".show-window");
       var closeWindow = document.querySelector("#window-closed");
+      var closeWindow2 = document.querySelector("#window-ok");
       var win = document.querySelector(".window");
 
- //cupon
+      var cuponMsj = document.querySelector(".cupon-aplicado")
+      var cleanInfo = document.querySelector(".btn-limpiar")
+
+      //cupon
       const cupon = document.getElementById("cupon");
-      const descuento = .10;
+      const descuento = .15;
 
       cupon.addEventListener("change", function () {
         console.log("cupon: " + cupon.value);
@@ -269,13 +275,21 @@
         const totalSinIVA = subtotal - montoDescuento; //para agregarle el iva
 
         const totalIVA = totalSinIVA * iva;
-        document.getElementById("iva").textContent = totalIVA;
+        document.getElementById("iva").textContent = "$" + totalIVA;
 
         const total = totalIVA + totalSinIVA;
-        document.getElementById("total").textContent = total;
+        document.getElementById("total").textContent = "$" + total;
+
+        //cupon show
+        if (cuponValor === "septiembre") {
+        cuponMsj.classList.remove("not-cupon");
+        cuponMsj.classList.add("show-cupon");
         
-
-
+        }else{
+        cuponMsj.classList.remove("show-cupon");
+        cuponMsj.classList.add("not-cupon")
+        }
+        
 
         console.log("not-show");
         win.classList.add("show");
@@ -286,6 +300,26 @@
         win.classList.add("not-show");
       });
 
+      closeWindow2.addEventListener("click", function () {
+        win.classList.remove("show");
+        win.classList.add("not-show");
+      });
+
+      
+
+      cleanInfo.addEventListener("click", function () {
+      document.getElementById("nombre").value = "";
+      document.getElementById("numero").value = "";
+      cupon.value = "";
+
+      checkboxes.forEach(function (checkbox) {
+        checkbox.checked = false;
+      });
+
+      // reiniciar el total de servicios acumulado
+      TotalServicios = 0;
+      document.getElementById("total-servicios").textContent = TotalServicios;
+    });
 
       // const dominio = document.querySelector("#dominio");
       // const hosting = document.querySelector("#hosting");
