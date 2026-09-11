@@ -193,9 +193,7 @@
     </div>
 
     <script>
-
-      var TotalServicios = 0;
-
+      //checkboxees
       const checkboxes = [
         document.querySelector("#dominio"),
         document.querySelector("#hosting"),
@@ -203,6 +201,8 @@
         document.querySelector("#bdcms"),
         document.querySelector("#cambios"),
       ];
+
+      var TotalServicios = 0;
 
       checkboxes.forEach(function (checkbox) {
         checkbox.addEventListener("click", function () {
@@ -216,6 +216,7 @@
       });
 
 
+      //precios
       const PRECIO_POR_PAGINA = 2000;
 
       function calcularTotalPaginas() {
@@ -226,19 +227,22 @@
 
      
 
-
+      //ventana
       var showWindow = document.querySelector(".show-window");
       var closeWindow = document.querySelector("#window-closed");
       var closeWindow2 = document.querySelector("#window-ok");
       var win = document.querySelector(".window");
 
-      var cuponMsj = document.querySelector(".cupon-aplicado")
+
+      //boton limpiar
       var cleanInfo = document.querySelector(".btn-limpiar")
 
       //cupon
+      var cuponMsj = document.querySelector(".cupon-aplicado")
       const cupon = document.getElementById("cupon");
       const descuento = .15;
 
+      //prueba para ver si apaerce el cupon
       cupon.addEventListener("change", function () {
         console.log("cupon: " + cupon.value);
       })
@@ -247,21 +251,25 @@
       //iva
       const iva = .16;
       
-
+        //mostrar ventana
         showWindow.addEventListener("click", function () {
+          //nombre cliente
         const nombreCliente = document.getElementById("nombre").value;
         document.getElementById("result-nombre").textContent = nombreCliente;
-
+ 
+        //numero de paginas 
         const numPaginas = parseInt(document.getElementById("numero").value) || 0;
         const totalPaginas = numPaginas * PRECIO_POR_PAGINA;
-        const totalPromo = parseInt(totalPaginas) + 5000;
+        const totalPromo = parseInt(totalPaginas) + 5000; //se suma a la promocion
 
         document.getElementById("result-num-paginas").textContent = numPaginas;
         document.getElementById("result-total-paginas").textContent = "$" + totalPromo;
 
+        //subototal
         const subtotal = parseInt(totalPromo) + parseInt(TotalServicios);
         document.getElementById("subtotal").textContent = subtotal;
 
+        //obtiene lo q escribio el usuario en cupon
         const cuponValor = cupon.value.trim();
         let montoDescuento = 0;
 
@@ -289,8 +297,7 @@
         cuponMsj.classList.remove("show-cupon");
         cuponMsj.classList.add("not-cupon")
         }
-        
-
+      
         console.log("not-show");
         win.classList.add("show");
       });
